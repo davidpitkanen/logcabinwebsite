@@ -1,0 +1,15 @@
+{% block content %}
+
+     <div class="btn-group-vertical btn-group-large" role="group">
+       <a href='/tradehouse/' class="btn btn-success" role="button">Home</a> 
+       <a href='/tradehouse/additem/' class="btn btn-success" role="button">Enter Item</a>
+       <a href='/tradehouse/edititems/' class="btn btn-success">Your Items</a>
+       <a href='/tradehouse/contactus/' class="btn btn-success">Contact Us</a>
+	  {% if loggedout %}
+         <a href='/tradehouse/signin' class="btn btn-success">Login</a>
+		{% else %}
+         <a href='/tradehouse/logout' class="btn btn-success">logout</a>
+		{% endif %}
+     </div>
+
+{% endblock %}

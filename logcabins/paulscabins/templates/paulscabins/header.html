@@ -1,0 +1,126 @@
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title> Trade Website </title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    </head>
+		
+		
+    <body>
+
+
+        {% load staticfiles %}
+
+        <style media="screen" type="text/css">
+ .banner {
+  height: 150px;
+  width: 100%;
+  max-height: 50%;
+  max-width: 100%;
+  min-height: 20%;
+  min-width: 30%;
+  background-image: url("{% static "images/bluesky.jpeg" %}");
+  background-size: cover;
+  margin:0px;
+  }
+  .navbar{
+     margin-top:0px;
+     margin-bottom:2px;
+     background-color: #FFFFFF;
+     }
+  #copy, #logo {
+  opacity: 1;
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform:translateY(-50%) translateX(-50%);
+}
+html
+{
+    background:url("{% static "images/wallpaper.jpg" %}");
+    position: relative;
+
+    }
+body
+{
+    background-color: rgb(0, 100, 0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+ .bckphoto
+ {
+     background:url("{% static "images/earthwallpaper.jpg" %}");
+
+ }
+
+</style>
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+<div class="layer1">
+<div class="layer">
+<div class="container newcolor">
+  <div class="jumbotron banner">
+      <hgroup>
+          <img src="{% static 'images/logo.png' %}" alt="My image"/>
+            <br/>
+          <br/>
+
+      </hgroup>
+</div>
+	<nav class="navbar navbar-default">
+
+
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"></a>
+    </div>
+    <ul class="nav nav-justified">
+      <li class="active"><a href="/paulscabins/">Welcome</a></li>
+      <li><a href="/paulscabins/aboutus/">About Us</a></li>
+      <li><a href="/paulscabins/yourloghome/">Your Log Home</a></li>
+        <li><a href="/paulscabins/logrestoration/">Log Restoration</a></li>
+        <li><a href="/paulscabins/gallery/">Gallery</a></li>
+	  <li><a href="/paulscabins/testimonials/"> Testimonials </a></li>
+    </ul>
+  </div>
+</nav>
+		<div>
+
+        {% block content %}
+			
+        {% endblock %}
+
+            <div class="row bckphoto">
+     <div class="col-sm-4">
+     </div>
+<div class="col-sm-4">
+</div>
+    <div class="col-sm-4">
+</br>
+    </br>
+              <img src="{% static 'images/logo.png' %}" alt="My image"/>
+    </br></br>
+    </div>
+</div>
+
+</div>
+		</div>
+</div>
+</div>
+</div>
+    </body>

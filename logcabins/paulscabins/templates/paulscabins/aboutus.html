@@ -1,0 +1,81 @@
+{% extends "paulscabins/header.html" %}
+
+{% block content %}
+
+<style media="screen" type="text/css">
+.card {
+    max-width: 100%;
+}
+.card-text {
+    word-wrap: break-word;
+}
+.vl {
+    border-left: 2px solid green;
+    height: 150px;
+}
+.carousel-inner img {
+  width:100%
+}
+.newcolor
+{
+    background-color: #F0FFFF
+}
+.footercolor
+    {
+    background-color: #A0522D;
+    }
+ .cursivestyle
+ {
+   font-family: Chalkduster, fantasy ;
+ }
+
+</style>
+
+       {% load staticfiles %}
+
+
+    <div class="row">
+
+    <img width="100%" src="{% static 'images/aboutuscabin.jpg' %}" alt="My image"/>
+
+    </div>
+
+
+
+<div class="row">
+
+          <div class="col-sm-1 cursivestyle">
+          </div>
+      <div class="col-sm-10 cursivestyle">
+         </br> </br>
+         <h3 align="center" style="font-family:Jazz LET, fantasy"> About Us </h3>
+      </br>
+         <p>
+R. J. Edelkoort Contracting was established in 1972 as a building contractor.
+             In 1980 the shift to log home building occurred and has remained the
+             primary focus ever since. Although a wide variety of techniques and products have been incorporated into
+             our portfolio since that beginning, hand crafting remains our passion.
+         </p>
+         <p>
+Our resume includes the replacement and restoration of rotting or damaged logs in old log structures.         </p>
+      </br>
+      </br>
+
+  </div>
+
+          <div class="col-sm-1 cursivestyle">
+          </div>
+
+<br/>
+    <br/>
+    <br/>
+</div>
+
+
+
+
+
+
+
+
+{% endblock %}

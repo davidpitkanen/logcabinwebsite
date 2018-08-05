@@ -1,0 +1,113 @@
+{% extends "paulscabins/header.html" %}
+
+{% block content %}
+
+<style media="screen" type="text/css">
+.card {
+    max-width: 100%;
+}
+.card-text {
+    word-wrap: break-word;
+}
+.vl {
+    border-left: 2px solid green;
+    height: 150px;
+}
+.carousel-inner img
+{
+  width:100%
+}
+.newcolor
+{
+    background-color: #F0FFFF
+}
+.footercolor
+    {
+    background-color: #A0522D;
+    }
+ .cursivestyle
+ {
+   font-family: Chalkduster, fantasy ;
+ }
+
+</style>
+
+
+<script>
+$(document).ready(function() {
+
+$('#gallery img').each(function(i) {
+	var imgFile = $(this).attr('src');
+	var preloadImage = new Image();
+  var imgExt = /(\.\w{3,4}$)/;
+  preloadImage.src = imgFile.replace(imgExt,'_h$1');
+
+}); // end each
+
+	$('#gallery a').click(function(evt) {
+		//don't follow link
+		 evt.preventDefault();
+		 //get path to new image
+	   var imgPath = $(this).attr('href');
+		 //get reference to old image
+		 var oldImage = $('#photo img');
+
+			 //create HTML for new image
+			 var newImage = $('<img style="max-width:600px;max-height:600px;min-width:500px;min-height:400px" src="' + imgPath +'">');
+			 //make new image invisible
+			 newImage.hide();
+			 //add to the #photo div
+			 $('#photo').prepend(newImage);
+			 //fade in new image
+			 newImage.fadeIn(1000);
+
+			 //fade out old image and remove from DOM
+			 oldImage.fadeOut(1000,function(){
+		     $(this).remove();
+				});
+	}); // end click
+
+	$('#gallery a:first').click();
+}); // end ready
+</script>
+
+
+       {% load staticfiles %}
+
+
+
+
+<div class="content">
+	<div class="main">
+		<h1 style="font-family:Jazz LET, fantasy" align="center">Gallery</h1>
+<div class="row">
+         <div class="col-sm-3 cursivestyle">
+         </div>
+     <div class="col-sm-6 cursivestyle">
+
+        <div id="photo"></div>
+     </div>
+
+             <div class="col-sm-3 cursivestyle">
+         </div>
+
+</div>
+        <div class="row">
+
+        </br></br></br></br>
+		<div id="gallery">
+    {%  for p in photos %}
+
+        <a href={{p.picture.url}} >
+        <img src={{p.picture.url}} vspace="20px" hspace="20px" width="100" height="100" alt="lost image"></a>
+
+            {% endfor %}
+        </div>
+        </br></br></br>
+        </div>
+	</div>
+</div>
+</div>
+
+
+{% endblock %}
